@@ -27,7 +27,7 @@ static uint32_t system_rom_tables[SYSTEM_ROM_TABLE_COUNT][1024]
     __attribute__((aligned(MINEMU_PAGE_SIZE)));
 static uint32_t user_page_table[1024] __attribute__((aligned(MINEMU_PAGE_SIZE)));
 static uint8_t user_image_pages[MAX_USER_IMAGE_PAGES][MINEMU_PAGE_SIZE]
-    __attribute__((aligned(MINEMU_PAGE_SIZE)));
+    __attribute__((aligned(MINEMU_PAGE_SIZE), section(".user_pages")));
 static uint8_t user_stack[MINEMU_PAGE_SIZE] __attribute__((aligned(MINEMU_PAGE_SIZE)));
 static uint32_t user_page_vaddrs[MAX_USER_IMAGE_PAGES];
 static uint32_t user_page_flags[MAX_USER_IMAGE_PAGES];

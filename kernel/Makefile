@@ -77,3 +77,5 @@ clean:
 	rm -rf $(BUILD)
 
 -include $(DEPENDENCIES)
+
+$(BUILD)/core/user_mode.o: CFLAGS += -O2

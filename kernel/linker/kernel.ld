@@ -56,6 +56,11 @@ SECTIONS
     __minemu_und_stack_top = .;
   } :kernel
 
+  .user_pages ALIGN(4096) (NOLOAD) :
+  {
+    *(.user_pages)
+  } :NONE
+
   __minemu_svc_stack_top_paddr = __minemu_svc_stack_top - 0x80000000;
   __minemu_irq_stack_top_paddr = __minemu_irq_stack_top - 0x80000000;
   __minemu_abt_stack_top_paddr = __minemu_abt_stack_top - 0x80000000;
